@@ -116,7 +116,7 @@ public static class DispatchThreadExceptionHandler<T extends ApnsPushNotificatio
     this.dispatchThread.setUncaughtExceptionHandler(new DispatchThreadExceptionHandler<T>(this));
     this.dispatchThread.start();
   }
-  public Thread createDispatchThread(){
+  protected Thread createDispatchThread(){
     return new Thread(new Runnable(){
       public void run(){
         while (!shutDown) {
